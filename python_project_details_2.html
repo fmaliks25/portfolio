@@ -1,107 +1,144 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Python Project Details</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="project-details">
-        <h1>Project Title: Analysis of Factors Influencing Student Performance</h1>
-        <section>
-            <h2>Overview</h2>
-            <p>
-                This project delves into an extensive analysis of factors influencing student academic performance using data sourced from the UCI Machine Learning Repository's Student Performance dataset. This dataset comprises comprehensive information on students' demographic, social, and academic attributes collected from two Portuguese secondary schools. The primary objective is to uncover meaningful insights into the various factors that impact students' final grades (G3) and to provide actionable recommendations for educational stakeholders.
-            </p>
-        </section>
-        <section>
-            <h2>Goals</h2>
-            <ul>
-                <li><strong>Explore Relationships:</strong> Investigate and analyze correlations between key factors such as parental education, study time, absences, and alcohol consumption (both daily and weekend) with students' academic performance.</li>
-                <li><strong>Provide Insights:</strong> Extract deep insights to understand the nuances and interactions among these factors and their influence on student achievement.</li>
-                <li><strong>Recommendations:</strong> Offer evidence-based recommendations to educators, administrators, and policymakers on strategies to improve educational outcomes and support student success.</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Methodology</h2>
-            <h3>Data Acquisition and Preparation</h3>
-            <p>
-                The dataset was downloaded from the UCI Machine Learning Repository and extracted into a local folder. The extracted files included two main CSV files: one for students in math courses and another for students in Portuguese language courses. For this analysis, the focus was on the math course data.
-            </p>
-            <h3>Data Loading and Cleaning</h3>
-            <p>
-                The data was loaded into pandas DataFrames, a powerful data manipulation library in Python. Data cleaning and preprocessing steps were conducted, which involved handling missing values, encoding categorical variables, and transforming the data into a format suitable for analysis. This ensured the dataset's integrity and readiness for exploratory data analysis and modeling.
-            </p>
-            <h3>Exploratory Data Analysis (EDA)</h3>
-            <ul>
-                <li><strong>Descriptive Statistics:</strong> Descriptive statistical analysis was performed to summarize the distribution and central tendencies of key variables such as parental education levels, study time, absences, and final grades (G3). This provided a foundational understanding of the dataset's characteristics.</li>
-                <li><strong>Data Visualization:</strong> Various data visualization techniques were employed to explore relationships and patterns among variables. Bar plots, scatter plots, box plots, and heatmaps were utilized to visually represent the data, making it easier to identify trends and correlations.</li>
-            </ul>
-            <h3>Predictive Modeling</h3>
-            <ul>
-                <li><strong>Feature Selection:</strong> Key features that were hypothesized to influence student performance were selected. These included parental education levels, study time, absences, daily alcohol consumption, and weekend alcohol consumption.</li>
-                <li><strong>Model Training and Evaluation:</strong> The dataset was split into training and testing sets. A linear regression model was chosen to predict the students' final grades (G3). The model was trained on the training set and then evaluated on the testing set using metrics such as mean squared error (MSE) to assess its performance. Cross-validation was also performed to ensure the model's robustness and generalizability.</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Results</h2>
-            <h3>Mean Squared Error (MSE)</h3>
-            <p>
-                The Mean Squared Error (MSE) indicates the average squared difference between the predicted grades and the actual grades in the test set. A lower MSE value suggests better model performance.
-            </p>
-            <p><strong>MSE:</strong> 20.7126</p>
-            <h3>Cross-Validation Scores</h3>
-            <p>
-                Cross-validation is a technique used to evaluate the model's performance on unseen data. Here, <code>cross_val_score</code> was used with 5-fold cross-validation to assess the model's reliability.
-            </p>
-            <p><strong>Cross-Validation Scores:</strong> [-0.1125, -0.0199, 0.0293, -0.0351, 0.0477]</p>
-            <p><strong>Average Cross-Validation Score:</strong> -0.0181</p>
-            <h3>Example Prediction</h3>
-            <p>
-                An example prediction was made on a single test data point to estimate the predicted grade.
-            </p>
-            <p><strong>Example Prediction:</strong> Predicted Grade = 9.01</p>
-        </section>
-        <section>
-            <h2>Interpretation</h2>
-            <p>
-                The MSE of 20.7126 indicates that, on average, the model's predictions are approximately 20.71 points away from the actual grades. Lower MSE values indicate better model performance.
-            </p>
-            <p>
-                The cross-validation scores vary around zero, with an average score of -0.0181. While these scores are close to zero, indicating some consistency, negative scores suggest that the model might not be performing well across all folds.
-            </p>
-            <p>
-                The example prediction of 9.01 suggests that for a specific input (based on the features used), the model predicted a grade of approximately 9.01.
-            </p>
-        </section>
-        <section>
-            <h2>Recommendations for Action</h2>
-            <p>
-                Based on the findings, several recommendations were made to enhance student academic performance:
-            </p>
-            <ul>
-                <li><strong>Enhancing Parental Engagement:</strong> Programs and initiatives that foster active parental participation in students' educational journeys were recommended, including workshops and resources to support parental involvement.</li>
-                <li><strong>Promoting Effective Study Practices:</strong> Strategies to promote effective study habits among students, such as study groups, tutoring services, and access to educational resources, were suggested.</li>
-                <li><strong>Addressing Attendance Challenges:</strong> Targeted interventions to monitor and improve student attendance, including early intervention strategies and incentives to encourage regular attendance, were proposed.</li>
-                <li><strong>Educational Campaigns on Alcohol Awareness:</strong> Comprehensive educational campaigns to raise awareness about the negative consequences of alcohol consumption on academic performance and overall well-being, targeting both students and parents, were advocated.</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Conclusion</h2>
-            <p>
-                The MSE and cross-validation scores provide insights into the model's performance. While the MSE is not excessively high, indicating reasonable predictive capability, the negative cross-validation scores and their average suggest potential issues with generalizability across different data subsets. Further tuning of the model (e.g., feature selection, regularization) or exploring different algorithms could potentially improve performance and reliability.
-            </p>
-            <p>
-                Through rigorous data analysis and insightful exploration, this project provides a nuanced understanding of the multifaceted factors influencing student academic performance. By leveraging these findings, educators, policymakers, and stakeholders can implement informed strategies to foster a supportive educational environment conducive to student success and achievement.
-            </p>
-        </section>
-        <section>
-            <h2>Future Directions</h2>
-            <p>
-                Future iterations of this project could explore additional variables such as socio-economic status, extracurricular activities, and psychological factors to further enhance our understanding of student performance determinants. Additionally, incorporating predictive modeling techniques could enable forecasting of academic outcomes and proactive intervention strategies.
-            </p>
-        </section>
-    </div>
-</body>
+<!DOCTYPE HTML>
+<!--
+	Detail Page Template by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Project Details - Analysis of Factors Influencing Student Performance</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+		<div id="wrapper">
+
+			<!-- Header -->
+			<header id="header" class="alt style2">
+				<a href="index.html" class="logo"><strong>Data Analyst Portfolio</strong> <span>by Faiza Siddique</span></a>
+				<nav>
+					<a href="#menu">Menu</a>
+				</nav>
+			</header>
+
+			<!-- Menu -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="#footer">Contact</a></li>
+					<div class="dropup">
+						<button class="dropbtn">Portfolio Projects</button>
+						<div class="dropup-content">
+							<a href="python.html">Python</a>
+							<a href="r.html">R</a>
+							<a href="sql.html">SQL</a>
+							<a href="excel.html">Excel</a>
+							<a href="https://public.tableau.com/app/profile/tianna.parris" target="_blank" class="link">Tableau</a>
+							<a href="powerbi.html">Power BI</a>
+						</div>
+					</div>
+				</ul>
+			</nav>
+
+			<!-- Main -->
+			<div id="main" class="alt">
+
+				<!-- One -->
+				<section id="one">
+					<div class="inner">
+						<header class="major">
+							<h1>Analysis of Factors Influencing Student Performance</h1>
+						</header>
+						<span class="image main"><img src="images/pythonmovie.png" alt="" /></span>
+
+						<h2>Project Title: Analysis of Factors Influencing Student Performance</h2>
+
+						<h3>Overview</h3>
+						<p>This project delves into an extensive analysis of factors influencing student academic performance using data sourced from the UCI Machine Learning Repository's Student Performance dataset. This dataset comprises comprehensive information on students' demographic, social, and academic attributes collected from two Portuguese secondary schools. The primary objective is to uncover meaningful insights into the various factors that impact students' final grades (G3) and to provide actionable recommendations for educational stakeholders.</p>
+
+						<h3>Goals</h3>
+						<ul>
+							<li>Explore Relationships: Investigate and analyze correlations between key factors such as parental education, study time, absences, and alcohol consumption (both daily and weekend) with students' academic performance.</li>
+							<li>Provide Insights: Extract deep insights to understand the nuances and interactions among these factors and their influence on student achievement.</li>
+							<li>Recommendations: Offer evidence-based recommendations to educators, administrators, and policymakers on strategies to improve educational outcomes and support student success.</li>
+						</ul>
+
+						<h3>Methodology</h3>
+
+						<h4>Data Acquisition and Preparation:</h4>
+						<ul>
+							<li>The dataset was downloaded from the UCI Machine Learning Repository and extracted into a local folder. The extracted files included two main CSV files: one for students in math courses and another for students in Portuguese language courses. For this analysis, the focus was on the math course data.</li>
+							<li>Data Loading and Cleaning:</li>
+							<li>The data was loaded into pandas DataFrames, a powerful data manipulation library in Python. Data cleaning and preprocessing steps were conducted, which involved handling missing values, encoding categorical variables, and transforming the data into a format suitable for analysis. This ensured the dataset's integrity and readiness for exploratory data analysis and modeling.</li>
+						</ul>
+
+						<h4>Exploratory Data Analysis (EDA):</h4>
+						<ul>
+							<li>Descriptive Statistics: Descriptive statistical analysis was performed to summarize the distribution and central tendencies of key variables such as parental education levels, study time, absences, and final grades (G3). This provided a foundational understanding of the dataset's characteristics.</li>
+							<li>Data Visualization: Various data visualization techniques were employed to explore relationships and patterns among variables. Bar plots, scatter plots, box plots, and heatmaps were utilized to visually represent the data, making it easier to identify trends and correlations.</li>
+						</ul>
+
+						<h3>Key Findings and Insights:</h3>
+						<ul>
+							<li><strong>Parental Education:</strong> Discovered a significant positive correlation between higher levels of parental education, particularly maternal education, and higher student grades (G3). This underscores the pivotal role of parental involvement in shaping academic outcomes.</li>
+							<li><strong>Study Time:</strong> Identified a clear positive association between increased study time and improved academic performance, emphasizing the importance of structured study habits and time management skills.</li>
+							<li><strong>Absences:</strong> Observed a negative impact of higher absenteeism on student grades, highlighting the critical need for initiatives to monitor and reduce student absenteeism for better learning outcomes.</li>
+							<li><strong>Alcohol Consumption:</strong> Found detrimental effects of both daily and weekend alcohol consumption on student academic performance, emphasizing the need for educational programs promoting responsible behavior and alcohol awareness among students.</li>
+						</ul>
+
+						<h3>Recommendations for Action:</h3>
+						<ul>
+							<li><strong>Enhancing Parental Engagement:</strong> Programs and initiatives that foster active parental participation in students' educational journeys were recommended, including workshops and resources to support parental involvement.</li>
+							<li><strong>Promoting Effective Study Practices:</strong> Strategies to promote effective study habits among students, such as study groups, tutoring services, and access to educational resources, were suggested.</li>
+							<li><strong>Addressing Attendance Challenges:</strong> Targeted interventions to monitor and improve student attendance, including early intervention strategies and incentives to encourage regular attendance, were proposed.</li>
+							<li><strong>Educational Campaigns on Alcohol Awareness:</strong> Comprehensive educational campaigns to raise awareness about the negative consequences of alcohol consumption on academic performance and overall well-being, targeting both students and parents, were advocated.</li>
+						</ul>
+
+						<h3>Conclusion</h3>
+						<p>The MSE and cross-validation scores provide insights into the model's performance. While the MSE is not excessively high, indicating reasonable predictive capability, the negative cross-validation scores and their average suggest potential issues with generalizability across different data subsets. Further tuning of the model (e.g., feature selection, regularization) or exploring different algorithms could potentially improve performance and reliability.</p>
+						<p>Through rigorous data analysis and insightful exploration, this project provides a nuanced understanding of the multifaceted factors influencing student academic performance. By leveraging these findings, educators, policymakers, and stakeholders can implement informed strategies to foster a supportive educational environment conducive to student success and achievement.</p>
+
+						<h3>Future Directions</h3>
+						<p>Future iterations of this project could explore additional variables such as socio-economic status, extracurricular activities, and psychological factors to further enhance our understanding of student performance determinants. Additionally, incorporating predictive modeling techniques could enable forecasting of academic outcomes and proactive intervention strategies.</p>
+
+						<ul class="actions">
+							<li><a href="python.html" class="button">Back to Projects</a></li>
+							<li><a href="https://github.com/fmaliks25/student_performance_Visualization/blob/main/Analysis_of_Factors_Influencing_Student_Performance-2.ipynb" target="_blank" class="button">View on GitHub</a></li>
+						</ul>
+					</div>
+				</section>
+
+			</div>
+
+			<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<ul class="icons">
+						<li><a href="mailto:parristianna@yahoo.com" target="_blank" class="icon solid alt fa-envelope"><span class="label">Twitter</span></a></li>
+						<li><a href="https://github.com/tiannaparris" target="_blank" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						<li><a href="https://www.linkedin.com/in/tianna-parris/" target="_blank" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		</div>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+	</body>
 </html>
