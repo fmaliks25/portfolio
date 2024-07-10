@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Project Details - Analysis of Factors Influencing Student Performance</title>
+		<title>Project Details - Analysis of Factors Influencing Student Performance Prediction</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -83,15 +83,32 @@
 							<li>Data Visualization: Various data visualization techniques were employed to explore relationships and patterns among variables. Bar plots, scatter plots, box plots, and heatmaps were utilized to visually represent the data, making it easier to identify trends and correlations.</li>
 						</ul>
 
-						<h3>Key Findings and Insights:</h3>
+						<h4>Predictive Modeling:</h4>
 						<ul>
-							<li><strong>Parental Education:</strong> Discovered a significant positive correlation between higher levels of parental education, particularly maternal education, and higher student grades (G3). This underscores the pivotal role of parental involvement in shaping academic outcomes.</li>
-							<li><strong>Study Time:</strong> Identified a clear positive association between increased study time and improved academic performance, emphasizing the importance of structured study habits and time management skills.</li>
-							<li><strong>Absences:</strong> Observed a negative impact of higher absenteeism on student grades, highlighting the critical need for initiatives to monitor and reduce student absenteeism for better learning outcomes.</li>
-							<li><strong>Alcohol Consumption:</strong> Found detrimental effects of both daily and weekend alcohol consumption on student academic performance, emphasizing the need for educational programs promoting responsible behavior and alcohol awareness among students.</li>
+							<li>Feature Selection: Key features that were hypothesized to influence student performance were selected. These included parental education levels, study time, absences, daily alcohol consumption, and weekend alcohol consumption.</li>
+							<li>Model Training and Evaluation: The dataset was split into training and testing sets. A linear regression model was chosen to predict the students' final grades (G3). The model was trained on the training set and then evaluated on the testing set using metrics such as mean squared error (MSE) to assess its performance. Cross-validation was also performed to ensure the model's robustness and generalizability.</li>
 						</ul>
 
-						<h3>Recommendations for Action:</h3>
+						<h3>Results</h3>
+						<ul>
+							<li><strong>Mean Squared Error (MSE)</strong><br>
+							The Mean Squared Error (MSE) indicates the average squared difference between the predicted grades and the actual grades in the test set. A lower MSE value suggests better model performance.<br>
+							MSE: 20.7126</li>
+							<li><strong>Cross-Validation Scores</strong><br>
+							Cross-validation is a technique used to evaluate the model's performance on unseen data. Here, cross_val_score was used with 5-fold cross-validation to assess the model's reliability.<br>
+							Cross-Validation Scores: [-0.1125, -0.0199, 0.0293, -0.0351, 0.0477]<br>
+							Average Cross-Validation Score: -0.0181</li>
+							<li><strong>Example Prediction</strong><br>
+							An example prediction was made on a single test data point to estimate the predicted grade.<br>
+							Example Prediction: Predicted Grade = 9.01</li>
+						</ul>
+
+						<h3>Interpretation</h3>
+						<p>MSE: The MSE of 20.7126 indicates that, on average, the model's predictions are approximately 20.71 points away from the actual grades. Lower MSE values indicate better model performance.</p>
+						<p>Cross-Validation Scores: The cross-validation scores vary around zero, with an average score of -0.0181. While these scores are close to zero, indicating some consistency, negative scores suggest that the model might not be performing well across all folds.</p>
+						<p>Example Prediction: The example prediction of 9.01 suggests that for a specific input (based on the features used), the model predicted a grade of approximately 9.01.</p>
+
+						<h3>Recommendations for Action</h3>
 						<ul>
 							<li><strong>Enhancing Parental Engagement:</strong> Programs and initiatives that foster active parental participation in students' educational journeys were recommended, including workshops and resources to support parental involvement.</li>
 							<li><strong>Promoting Effective Study Practices:</strong> Strategies to promote effective study habits among students, such as study groups, tutoring services, and access to educational resources, were suggested.</li>
