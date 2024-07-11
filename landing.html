@@ -24,14 +24,13 @@
 
         .footer-container {
             display: flex;
-            justify-content: space-between; /* Adjust as needed */
-            align-items: center; /* Align items vertically */
-            flex-wrap: wrap; /* Wrap items if they exceed container width */
+            flex-direction: column; /* Change to column to stack items vertically */
+            align-items: center; /* Center items horizontally */
+            gap: 10px; /* Spacing between sections */
         }
 
         .contact-method {
-            flex: 1 1 200px; /* Flex properties to control item width */
-            margin: 10px; /* Spacing between sections */
+            width: 100%; /* Full width for each section */
         }
 
         .contact-method h3 {
@@ -43,11 +42,6 @@
         .contact-method a {
             font-size: 14px;
             color: #ccc; /* Light gray color for text */
-        }
-
-        /* Custom CSS to hide any icon elements */
-        .contact-method i, .contact-method .icon {
-            display: none;
         }
     </style>
     <!-- End custom CSS -->
