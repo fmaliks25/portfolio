@@ -24,13 +24,14 @@
 
         .footer-container {
             display: flex;
-            flex-direction: column; /* Change to column to stack items vertically */
-            align-items: center; /* Center items horizontally */
-            gap: 10px; /* Spacing between sections */
+            flex-wrap: wrap; /* Ensure items wrap if they exceed container width */
+            justify-content: center; /* Center items horizontally */
         }
 
         .contact-method {
-            width: 100%; /* Full width for each section */
+            flex: 0 0 100%; /* Take full width of the container */
+            max-width: 300px; /* Limit maximum width of each section */
+            margin: 10px; /* Spacing around each section */
         }
 
         .contact-method h3 {
@@ -196,7 +197,7 @@
                 </section>
             </div>
         </section>-->
-        <p></p>
+        
         <footer id="footer">
             <section class="footer-container">
                 <section class="contact-method">
